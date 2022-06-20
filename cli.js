@@ -75,7 +75,7 @@ async function backupUsers(cognitoIsp, userPoolId, file) {
 
   const params = { UserPoolId: userPoolId };
 
-  const limiter = new Bottleneck({ minTime: 25 });
+  const limiter = new Bottleneck({ minTime: 50 });
 
   // AWS limits to 50 API calls for AdminListGroupsForUser per second, so be safe and do 40 per second
   // https://docs.aws.amazon.com/cognito/latest/developerguide/limits.html#category_operations
